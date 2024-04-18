@@ -1,13 +1,16 @@
-function TodoItem(props) {
+import { useContext } from "react";
+import { TodoContext } from "../Context/TodoContext";
 
-  const {id, title, completed, changeTodo, deleteTodo} = props
+function TodoItem(props) {
+  const { id, title, completed } = props;
+  const { changeTodo, deleteTodo } = useContext(TodoContext);
 
   return (
-    <div 
+    <div
       className="todo_item"
       onClick={() => changeTodo(id)}
       onDoubleClick={() => deleteTodo(id)}
-      style={{backgroundColor: (completed) ? '#6bbe22' : '#ffdfbb'}}
+      style={{ backgroundColor: completed ? "#6bbe22" : "#ffdfbb" }}
     >
       <h2>{title}</h2>
     </div>

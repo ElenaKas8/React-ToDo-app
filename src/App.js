@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import TodoList from "./conponents/TodoList/TotoList";
+import TodoList from "./conponents/TodoList/TodoList";
 import AddForm from "./conponents/AddForm/AddForm";
 
+import {TodoContext} from "./conponents/Context/TodoContext";
 function App() {
 
   // Реализуйте механизмы чтения и записи данных задач внутри LocalStorage
@@ -55,10 +56,12 @@ function App() {
   }, [todos])
 
   return (
+    <TodoContext.Provider value={{todos, changeTodo, deleteTodo}}>
     <div>
       <AddForm addTodo={addTodo}/>
-      <TodoList todos={todos} changeTodo={changeTodo} deleteTodo={deleteTodo}/>
+      <TodoList/>
     </div>
+    </TodoContext.Provider>
   );
 }
 
