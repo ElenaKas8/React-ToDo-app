@@ -1,0 +1,20 @@
+.todo_item {
+  display: flex;
+  flex-direction: column;
+  outline: 2px solid rgb(50, 49, 49);
+
+  padding: 10px;
+  margin: 20px 170px;
+  box-shadow: 5px 5px 15px rgb(149, 146, 146);
+}
+
+.input_elem{
+  display: flex;
+  justify-content: center;
+}
+
+.input_elem > input {
+  padding: 10px;
+  width: 350px;
+  box-shadow: 5px 5px 15px rgb(151, 149, 149);
+}
